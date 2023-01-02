@@ -6,7 +6,8 @@ export default function Views (): JSX.Element {
     return (
         <Routes>
             <Route path='/' element={<Login />}/>
-            <Route path='/register' element={< SignUp />}/>
+            <Route path='/register' element={<SignUp />}/>
+            <Route path='*' element={<Login />} />
         </Routes>
     )
 }
