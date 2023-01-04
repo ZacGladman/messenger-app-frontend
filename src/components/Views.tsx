@@ -1,13 +1,18 @@
-import { Route, Routes } from "react-router-dom";
-import SignUp from "./login/Sign-Up";
-import Login from "./login/Login";
+import LoginHomepage from "./LoginHomepage";
+import { useState } from "react";
+import { User } from "firebase/auth";
 
-export default function Views (): JSX.Element {
-    return (
-        <Routes>
-            <Route path='/' element={<Login />}/>
-            <Route path='/register' element={<SignUp />}/>
-            <Route path='*' element={<Login />} />
-        </Routes>
-    )
+export default function Views(): JSX.Element {
+  const [signedInUserDetails, setSignedInUserDetails] = useState<
+    User | undefined
+  >();
+  return (
+    <>
+      {signedInUserDetails === undefined ? (
+        <LoginHomepage setSignedInUserDetails={setSignedInUserDetails} />
+      ) : (
+        <h1>signed-in user: {signedInUserDetails.displayName}</h1>
+      )}
+    </>
+  );
 }

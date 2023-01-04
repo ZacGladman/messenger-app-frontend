@@ -1,0 +1,25 @@
+body {
+  font-family: "Poppins";
+}
+
+.loginButton {
+  font-family: "Poppins";
+  font-size: 16px;
+  width: 15%;
+  color: white;
+  background-color: slateblue;
+  border: none;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.pageTitle {
+  font-size: 4rem;
+  text-align: center;
+  color: rgb(39, 39, 39);
+}
+
+.loginHomepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
